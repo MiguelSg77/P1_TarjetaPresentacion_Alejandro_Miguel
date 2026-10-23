@@ -25,6 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,91 +48,99 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
-        //Primera columna: Alex
-        Column(
+    //Primera columna: Alex
+    Column(
+        Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center
+    ) {
+        Row(
             Modifier
-                .fillMaxWidth(), verticalArrangement = Arrangement.Center
+                .padding(vertical = 4.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
         ) {
+            Image(
+                painter = painterResource(R.drawable.jesussaludandokotlin),
+                contentDescription = null,
+                Modifier.size(150.dp)
+            )
+        }
+        Row(
+            Modifier
+                .padding(vertical = 4.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(text = "Full Name", fontWeight = FontWeight.Bold, fontSize = 40.sp)
+        }
+        Row(
+            Modifier
+                .padding(vertical = 4.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+
+        ) {
+            Text(text = "Title", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+        }
+    }
+
+
+    // Parte Miguel
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(bottom = 30.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Bottom),
+    ) {
+        Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
             Row(
-                Modifier
-                    .padding(vertical = 4.dp)
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
+                horizontalArrangement = Arrangement.spacedBy(5.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                    painter = painterResource(R.drawable.jesussaludandokotlin),
+                    painter = painterResource(R.drawable.img),
                     contentDescription = null,
-                    Modifier.size(150.dp)
+                    modifier = Modifier.size(25.dp)
+                )
+                Text(
+                    text = stringResource(R.string.numTelefono),
+                    fontFamily = FontFamily.Serif,
+                    color = Color.Magenta
                 )
             }
-            Row(
-                Modifier
-                    .padding(vertical = 4.dp)
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Text(text = "Full Name", fontWeight = FontWeight.Bold, fontSize = 40.sp)
-            }
-            Row(
-                Modifier
-                    .padding(vertical = 4.dp)
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
 
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(5.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(text = "Title", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                Image(
+                    painter = painterResource(R.drawable.img),
+                    contentDescription = null,
+                    modifier = Modifier.size(25.dp)
+                )
+                Text(
+                    text = stringResource(R.string.redSocial),
+                    fontFamily = FontFamily.Serif,
+                    color = Color.Magenta
+                )
+            }
+
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(5.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.img),
+                    contentDescription = null,
+                    modifier = Modifier.size(25.dp)
+                )
+                Text(
+                    text = stringResource(R.string.email),
+                    fontFamily = FontFamily.Serif,
+                    color = Color.Magenta
+                )
             }
         }
-
-
-        // Parte Miguel
-        Column(
-            Modifier.fillMaxWidth().padding(bottom = 30.dp), verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Bottom)
-        ) {
-            Row(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.img),
-                    contentDescription = null,
-                    Modifier.size(25.dp)
-                )
-
-                Column() {
-                    Text(text = "+00 (00) 000 000", Modifier.width(180.dp))
-                }
-            }
-
-            Row(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.img),
-                    contentDescription = null,
-                    Modifier.size(25.dp)
-                )
-
-                Column() {
-                    Text(text = "@socialmediahandle", Modifier.width(180.dp))
-                }
-            }
-
-            Row(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.img),
-                    contentDescription = null,
-                    Modifier.size(25.dp)
-                )
-
-                Column() {
-                    Text(text = "email@domail.com", Modifier.width(180.dp))
-                }
-            }
-        }
+    }
 
 }
