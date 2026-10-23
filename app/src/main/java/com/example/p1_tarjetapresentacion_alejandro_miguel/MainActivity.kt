@@ -25,7 +25,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -36,8 +38,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                Surface(modifier = Modifier.fillMaxSize()) {
+                Surface(modifier = Modifier.fillMaxSize(), color = Color(0xFFB8AA7B)) {
                     Greeting()
+
                 }
             }
         }
@@ -49,7 +52,12 @@ fun Greeting(modifier: Modifier = Modifier) {
         //Primera columna: Alex
         Column(
             Modifier
-                .fillMaxWidth(), verticalArrangement = Arrangement.Center
+                .padding(horizontal = 15.dp)
+                .fillMaxWidth(),
+
+            verticalArrangement = Arrangement.Center
+
+
         ) {
             Row(
                 Modifier
@@ -60,7 +68,7 @@ fun Greeting(modifier: Modifier = Modifier) {
                 Image(
                     painter = painterResource(R.drawable.jesussaludandokotlin),
                     contentDescription = null,
-                    Modifier.size(150.dp)
+                    Modifier.size(200.dp)
                 )
             }
             Row(
@@ -69,23 +77,25 @@ fun Greeting(modifier: Modifier = Modifier) {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                Text(text = "Full Name", fontWeight = FontWeight.Bold, fontSize = 40.sp)
+                Text(text = stringResource(R.string.Nombre_de_Equipo), fontWeight = FontWeight.Bold, fontSize = 40.sp, textAlign = TextAlign.Center)
             }
             Row(
                 Modifier
-                    .padding(vertical = 4.dp)
+                    .padding(vertical = 3.dp)
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
 
             ) {
-                Text(text = "Title", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                Text(text = stringResource(R.string.Descripcion), fontSize = 20.sp, textAlign = TextAlign.Center)
             }
         }
 
 
         // Parte Miguel
         Column(
-            Modifier.fillMaxWidth().padding(bottom = 30.dp), verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Bottom)
+            Modifier
+                .fillMaxWidth()
+                .padding(bottom = 30.dp), verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Bottom)
         ) {
             Row(
                 Modifier.fillMaxWidth(),

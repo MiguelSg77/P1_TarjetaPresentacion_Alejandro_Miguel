@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">P1_TarjetaPresentacion_Alejandro_Miguel</string>
+    <string name="Nombre_de_Equipo">Divine Basket Team</string>
+    <string name="Descripcion">Los mejores jugadores de baloncesto en el cielo 👌</string>
 </resources>
