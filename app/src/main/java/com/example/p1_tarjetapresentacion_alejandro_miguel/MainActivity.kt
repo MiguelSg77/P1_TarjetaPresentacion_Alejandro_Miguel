@@ -25,7 +25,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -91,56 +90,63 @@ fun Greeting(modifier: Modifier = Modifier) {
         }
 
 
-        // Parte Miguel
-        Column(
-            Modifier
-                .fillMaxWidth()
-                .padding(bottom = 30.dp), verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Bottom)
-        ) {
+    // Parte Miguel
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(bottom = 30.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Bottom),
+    ) {
+        Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
             Row(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
+                horizontalArrangement = Arrangement.spacedBy(5.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
                     painter = painterResource(R.drawable.img),
                     contentDescription = null,
-                    Modifier.size(25.dp)
+                    modifier = Modifier.size(25.dp)
                 )
-
-                Column() {
-                    Text(text = "+00 (00) 000 000", Modifier.width(180.dp))
-                }
+                Text(
+                    text = stringResource(R.string.numTelefono),
+                    fontFamily = FontFamily.Serif,
+                    color = Color.Magenta
+                )
             }
 
             Row(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
+                horizontalArrangement = Arrangement.spacedBy(5.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
                     painter = painterResource(R.drawable.img),
                     contentDescription = null,
-                    Modifier.size(25.dp)
+                    modifier = Modifier.size(25.dp)
                 )
-
-                Column() {
-                    Text(text = "@socialmediahandle", Modifier.width(180.dp))
-                }
+                Text(
+                    text = stringResource(R.string.redSocial),
+                    fontFamily = FontFamily.Serif,
+                    color = Color.Magenta
+                )
             }
 
             Row(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
+                horizontalArrangement = Arrangement.spacedBy(5.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
                     painter = painterResource(R.drawable.img),
                     contentDescription = null,
-                    Modifier.size(25.dp)
+                    modifier = Modifier.size(25.dp)
                 )
-
-                Column() {
-                    Text(text = "email@domail.com", Modifier.width(180.dp))
-                }
+                Text(
+                    text = stringResource(R.string.email),
+                    fontFamily = FontFamily.Serif,
+                    color = Color.Magenta
+                )
             }
         }
+    }
 
 }
