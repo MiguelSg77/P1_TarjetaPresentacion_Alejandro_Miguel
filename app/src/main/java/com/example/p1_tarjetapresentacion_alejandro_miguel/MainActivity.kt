@@ -25,6 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -104,14 +106,14 @@ fun Greeting(modifier: Modifier = Modifier) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                    painter = painterResource(R.drawable.img),
+                    painter = painterResource(R.drawable.movil2),
                     contentDescription = null,
                     modifier = Modifier.size(25.dp)
                 )
                 Text(
                     text = stringResource(R.string.numTelefono),
                     fontFamily = FontFamily.Serif,
-                    color = Color.Magenta
+                    fontSize = 18.sp
                 )
             }
 
@@ -120,14 +122,14 @@ fun Greeting(modifier: Modifier = Modifier) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                    painter = painterResource(R.drawable.img),
+                    painter = painterResource(R.drawable.facebook),
                     contentDescription = null,
                     modifier = Modifier.size(25.dp)
                 )
                 Text(
                     text = stringResource(R.string.redSocial),
                     fontFamily = FontFamily.Serif,
-                    color = Color.Magenta
+                    fontSize = 18.sp
                 )
             }
 
@@ -136,14 +138,14 @@ fun Greeting(modifier: Modifier = Modifier) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                    painter = painterResource(R.drawable.img),
+                    painter = painterResource(R.drawable.correo),
                     contentDescription = null,
                     modifier = Modifier.size(25.dp)
                 )
                 Text(
                     text = stringResource(R.string.email),
                     fontFamily = FontFamily.Serif,
-                    color = Color.Magenta
+                    fontSize = 18.sp
                 )
             }
         }
