@@ -46,16 +46,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
-    Column(
-        Modifier
-            .fillMaxSize()
-            .padding(horizontal = 12.dp, vertical = 12.dp),
-        verticalArrangement = Arrangement.Bottom
-    ) {
         //Primera columna: Alex
         Column(
             Modifier
-                .fillMaxWidth()
+                .fillMaxWidth(), verticalArrangement = Arrangement.Center
         ) {
             Row(
                 Modifier
@@ -88,8 +82,10 @@ fun Greeting(modifier: Modifier = Modifier) {
             }
         }
 
+
+        // Parte Miguel
         Column(
-            Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(5.dp)
+            Modifier.fillMaxWidth().padding(bottom = 30.dp), verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Bottom)
         ) {
             Row(
                 Modifier.fillMaxWidth(),
@@ -136,5 +132,5 @@ fun Greeting(modifier: Modifier = Modifier) {
                 }
             }
         }
-    }
+
 }
