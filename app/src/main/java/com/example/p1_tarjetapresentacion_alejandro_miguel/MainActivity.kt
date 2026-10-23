@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -46,16 +46,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
-    Column(
-        Modifier
-            .fillMaxSize()
-            .padding(horizontal = 12.dp, vertical = 12.dp),
-        verticalArrangement = Arrangement.Bottom
-    ) {
         //Primera columna: Alex
         Column(
             Modifier
-                .fillMaxWidth()
+                .fillMaxWidth(), verticalArrangement = Arrangement.Center
         ) {
             Row(
                 Modifier
@@ -88,32 +82,55 @@ fun Greeting(modifier: Modifier = Modifier) {
             }
         }
 
+
+        // Parte Miguel
         Column(
-            Modifier
-                .fillMaxWidth()
-                .background(color = Color.Red)
+            Modifier.fillMaxWidth().padding(bottom = 30.dp), verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Bottom)
         ) {
             Row(
-                Modifier
-                    .fillMaxWidth()
-                    .background(color = Color.Cyan)
+                Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
             ) {
-                Text(text = "hola hola pasa pasa 1")
+                Image(
+                    painter = painterResource(R.drawable.img),
+                    contentDescription = null,
+                    Modifier.size(25.dp)
+                )
+
+                Column() {
+                    Text(text = "+00 (00) 000 000", Modifier.width(180.dp))
+                }
             }
+
             Row(
-                Modifier
-                    .fillMaxWidth()
-                    .background(color = Color.Cyan)
+                Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
             ) {
-                Text(text = "hola hola pasa pasa 2")
+                Image(
+                    painter = painterResource(R.drawable.img),
+                    contentDescription = null,
+                    Modifier.size(25.dp)
+                )
+
+                Column() {
+                    Text(text = "@socialmediahandle", Modifier.width(180.dp))
+                }
             }
+
             Row(
-                Modifier
-                    .fillMaxWidth()
-                    .background(color = Color.Cyan)
+                Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.CenterHorizontally)
             ) {
-                Text(text = "hola hola pasa pasa 3")
+                Image(
+                    painter = painterResource(R.drawable.img),
+                    contentDescription = null,
+                    Modifier.size(25.dp)
+                )
+
+                Column() {
+                    Text(text = "email@domail.com", Modifier.width(180.dp))
+                }
             }
         }
-    }
+
 }
